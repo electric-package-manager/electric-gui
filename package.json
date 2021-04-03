@@ -35,7 +35,7 @@
   "scripts": {
     "dev": "yarn build-main && yarn build-frontend --watch & electron .",
     "prod": "yarn build-main && yarn build-frontend && build-electron",
-    "build-main": "esbuild src/main/main.ts --bundle --outfile=dist/main.bundle.js",
+    "build-main": "esbuild src/main/main.ts --bundle --outfile=dist/main.bundle.js --platform=node",
     "build-frontend": "mkdir dist -p && cp src/frontend/index.html dist/ & esbuild src/frontend/main.tsx --bundle --outfile=dist/renderer.bundle.js",
     "build-electron": "electron-builder"
   }
